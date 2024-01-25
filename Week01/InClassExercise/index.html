@@ -15,7 +15,7 @@
     </head>
     <body>
         <!-- everything inside the body tags shows up in the browser window! -->
-        <h1>
+        <h1 id="top">
             Heading 1 is the most important text on the page.  There should only be one h1 per page!
         </h1>
         <!-- we have h1-h6, these are all more important than regular paragraph text -->
@@ -24,8 +24,63 @@
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
+        <hr>
         <!-- Most text will probably wind up as a p tag.  You can weight certain words or phrases
         with more importance -->
-        <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quos commodi debitis illo perspiciatis ullam? Sapiente repellat, consequatur, illum omnis delectus molestias amet voluptates suscipit aspernatur earum eligendi saepe vel.</P>
+        <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quos commodi 
+        debitis illo perspiciatis ullam? Sapiente repellat, consequatur, illum omnis
+
+        <br />
+        delectus molestias amet voluptates suscipit aspernatur earum eligendi saepe vel.</P>
+
+        <h2>Buttermilk Pancakes</h2>
+        <p>This is a escription of this amazing recipe.</p>
+        <h3>Ingredients</h3>
+        <!-- Unordered lists are used for listing items when the exact order is not important -->
+        <ul>
+            <!-- List tags need to be in a UL or OL -->
+            <li>1 cup flour</li>
+            <li>1 cup milk</li>
+            <li>1 stick of butter</li>
+            <li>2 tbsp sugar</li>
+            <li>1 egg</li>
+            <li>
+                spices
+                <ul>
+                    <li>cinnamon</li>
+                    <li>nutmeg</li>
+                    <li>salt</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Instructions</h3>
+        <!-- ordered lists care about and display an order notation -->
+        <ol>
+            <li>Combine all ingredients in a bowl.  Mix well</li>
+            <li>Heat pan on medium, melt 1 tbsp butter</li>
+            <li>Add scoop of batter to the pan</li>
+            <li>
+                sub-ordered list
+                <ol>
+                    <li>count to 10</li>
+                    <li>flip pancake</li>
+                    <li>count to 10 again</li>
+                </ol>
+            </li>
+        </ol>
+    <!-- href is the reference that you are linking to
+    use arget _blank to open the link in a new tab, use _self to open in the same tab
+    if you don't specify a target, it will open in the same tab
+    if you use #___ as an ID it scans the page for that ID
+    -->
+    
+    <a href="https://www.yummly.com/recipe/Rainbow-Pancakes-1228190" target="_blank"
+    >Link to a real pancake recipe</a>
+    <br>
+    <a href="#top">Back to top of page</a>
+    <br>
+    <img src="https://www.cookingclassy.com/wp-content/uploads/2021/05/pancakes-03.jpg" width="500px"
+    alt="buttermilk pancakes with syrup" title="buttermilk pancakes"/>
+    <img src="img/fluffy-pancakes-10.jpg">
     </body>
 </html>
