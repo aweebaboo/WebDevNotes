@@ -1,0 +1,8 @@
+ Important things to do:
+ Clarify what the problem is and how you will address it
+ Make sketches to help designing later
+ Get early feedback to help direct development
+ Use a wireframing tool you're comfortable with
+ Make sure your wireframe is tailored to the audience
+
+All these things seem useful to take into account while wireframing since if you keep these in mind you can save yourself from having to do extra work in the future.  I'll try to keep these in mind for when I start wireframing.
