@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@200..700&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,6 +10,7 @@
     margin: 0;
     margin-right: 20px;
     font-weight: 300;
+    font-family: Oswald;
 }
 
 header {
@@ -16,11 +19,23 @@ header {
     align-items: center;
     background-color: gray;
     padding: 0 2rem;
+    position: fixed;
+    width: 100%;
+    font-family: Oswald;
+    z-index: 1000;
+    top: 0;
+}   
+
+body {
+    margin-top: 4rem;
+}
+
+header.h1 {
     position: relative;
     
 }
 
-.menu {
+.menu {    
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -42,14 +57,87 @@ header {
     background-color: rgba(0,0,0,0.3);
 }
 
-.section1 {
-    width:100%;   
-    padding: 25px 10px 200px 10px;
-    background-color: rgb(135, 206, 250, 0.5);
+.container {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.section2 {
-    width:100%;   
-    padding: 25px 10px 200px 10px;
-    background-color: white;
+.thumb {
+    position: relative;
+    /* whichever way you style width make it consistent */
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 35%;
+    /* flex: 0 0 30%;
+    width: 30%; */
+    display: flex;
+    overflow: hidden;
+    margin: 24px auto;
+    justify-content: space-around;
+}
+
+/* prepare initial state for image trnasform */
+.thumb img {
+    display: flex;
+    transform: scale(1.1);
+    transform: rotate(0deg);
+    transition: all 1s ease;
+    
+}
+
+.thumb:hover img {
+    transform: scale(1.5) rotate(-5deg);
+}
+
+.mask {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: rgba(255,255,255,0.5);
+    transition: all 1s ease-in-out;
+}
+
+.mask h2 {
+    margin:0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+.thumb:hover .mask {
+    opacity: 1;
+}
+
+.thumb .mask h2, 
+.thumb .mask p, 
+.thumb .mask a {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.thumb:hover .mask h2, 
+.thumb:hover .mask p, 
+.thumb:hover .mask a {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 12px;
+    }
+
 }
