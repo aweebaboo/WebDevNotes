@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JS Data Types</title>
+        <style type="text/css">
+
+        </style>
+        <script type="text/javascript">
+            // declare a variable
+            var myVar;
+            // assign a value to a variable
+            myVar = 'number';
+            // declare and assign in the same line
+            var otherVar = 24;
+            console.log(myVar);
+            console.log(typeof myVar);
+            console.log(typeof otherVar);
+            // reassign value to myVar
+            myVar = true;
+            console.log(myVar);
+            console.log(typeof myVar);
+
+            // Concatenates 4 and 16
+            console.log(4 + '16'); //Works
+            // multiplies 4 and 16
+            console.log(4 * '16'); //Works
+            // doesn't work, no math between string and number
+            console.log(6 * 'four'); //NaN
+
+            var temp = 72;
+            // how to insert variables between strings
+            console.log("Today's temperature is " + temp + " degrees F.");
+
+            // declare and define a function
+            function printMessage(){
+                console.log("Hello World!");
+            }
+            // call/execute a function
+            printMessage();
+
+            function sumVals(a, b){
+                // what ever is written between the {} is our function
+                // any variables declared/assigned between {} live and die within this function
+                var sum = a+b;
+                alert(sum);
+            }
+            //calling sumVals function with 2 arguments
+            sumVals(345, 678);
+
+            // if you declare sum outside of the function, you can call it, but otherwise it doesn't exist outside of the function
+
+            // booleans and consitionals
+            var isOn = true;
+            // toggle between on and off
+            function switchOnOff() {
+                if (isOn === true) {
+                    alert('isOn is currently true.  Switching to false...');
+                    isOn = false;
+                }
+                else {
+                    alert('isOn is currently false.  Switching to true...');
+                }
+            }
+            
+            // loops and inccrements
+            // i++ is shorthand for i = i+1;
+            // i-- is shorthand for i = i-1;
+            // i+=5 is shorthand for i = i+5;
+
+            function countToN(n) {
+                // for loop
+                for (var i = 0; i<=n; i++) {
+                    console.log(i);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <button onclick="sumVals(45,98)">Call sum Values function</button>
+        <button onclick="switchOnOff()">Toggle on/off</button>
+        <button onclick="countToN(10)">Count to 10</button>
+    </body>
+</html>

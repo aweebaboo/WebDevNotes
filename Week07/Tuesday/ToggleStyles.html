@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Toggle Styles</title>
+        <style>
+            .active {
+                background-color: #006FFF;
+                color: white;
+                font-size: 60px;
+            }
+        </style>
+        <script>
+            function toggleActive() {
+                // grab and store the H1 element in the page as a var named element
+                var element = document.getElementById('changeMe');
+                //check if the element already has the class active applied - if it does, then remove it
+                if (element.classList.contains('active')) {
+                    //remove class
+                    element.classList.remove('active');
+                    //change inner html of the h1
+                    element.innerHTML = "I am not active anymore";
+                } else {
+                    //class is not active
+                    element.classList.add('active');
+                    element.innerHTML = "i am now active!"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="changeMe" onClick="toggleActive()">
+            This is a heading 1.  Click me to change CSS class and HTML content!
+        </h1>
+    </body>
+</html>
