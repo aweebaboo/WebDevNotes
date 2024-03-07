@@ -6,18 +6,11 @@
     margin: 0;
 }
 
-.brand {
-    margin: 0;
-    margin-right: 20px;
-    font-weight: 300;
-    font-family: Oswald;
-}
-
 header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(40, 1, 113);
     padding: 0 2rem;
     position: fixed;
     width: 100%;
@@ -28,11 +21,11 @@ header {
 
 body {
     margin-top: 4rem;
+    background-color: #e3d9ff;
 }
 
 header.h1 {
     position: relative;
-    
 }
 
 .menu {    
@@ -41,15 +34,18 @@ header.h1 {
     margin: 0;
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 .menu li {
+    align-content: center;
     min-width: 5rem;
 }
 
 .menu li a{
     display: block;
     padding: 1rem;
+    color: rgb(64, 166, 132);
 }
 
 .menu li a:hover {
