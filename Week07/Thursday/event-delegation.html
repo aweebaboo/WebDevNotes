@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Event Listeners and Delegation</title>
+        <style type="text/css">
+            img {
+                display: block;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .active {
+                color: red;
+            }
+
+
+
+        </style>
+        <script type="text/javascript">
+
+            var hideShow;
+            // wait for the DOM to be loaded before executing certain lines of code
+            // First argument is the event to listen for (these are keywords, we cannot make them up)
+            // Second argument is the callback function we wouldlike to fire when the event is true
+            // In this example the callback function is anonymous aka we execute these lines of code here and never have to call them anywhere else
+            document.addEventListener('DOMContentLoaded', function () {
+                // this is all of the code you want to wait for the page to fully load before executing
+                // this is whe eryou assign values/elements to global variables
+                // this is also where you assign event listeners to other elements on the page
+                console.log('locked and loaded')
+
+                var hideShow = document.getElementById('hideBtn')
+
+                // document
+                // .getElementById('hideBtn')
+                hideShow
+                .addEventListener('click', toggleVisible)
+
+                document
+                .getElementById('eventH1')
+                .addEventListener('mouseover', function(event) {
+                    console.log(event.target)
+                    // storing the element that the event happened to as a variable
+                    var el = event.target
+                    el.classList.toggle('active')
+                })
+            })
+
+            function toggleVisible() {
+                var peep = document.getElementById('chicken')
+                peep.classList.toggle('hidden')
+
+                // this is a valid use of innerHTML where we change the button text
+                if (peep.classList.contains('hidden')) {
+                    document.getElementById('hideBtn').innerHTML = "Show"
+                } else {
+                    document.getElementById('hideBtn').innerHTML = "Hide"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="eventH1">This is here to be moused over so we can see the event object.</h1>
+        <button id="hideBtn">Hide</button>
+        <img id="chicken" src="https://tse3.mm.bing.net/th?id=OIP.0hKHITtwp-HQUTSI2IzIUAHaE8&pid=Api&P=0&h=220"/>
+    </body>
+</html>
