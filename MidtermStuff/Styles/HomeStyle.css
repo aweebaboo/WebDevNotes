@@ -11,7 +11,7 @@ header {
     flex-direction: row;
     align-items: center;
     background-color: rgb(40, 1, 113);
-    padding: 0 2rem;
+    padding: 0 1rem;
     position: fixed;
     width: 100%;
     font-family: Oswald;
@@ -20,10 +20,7 @@ header {
     text-align: center;
 }   
 
-body {
-    margin-top: 4rem;
-    background-color: #e3d9ff;
-}
+
 
 header.h1 {
     position: relative;
@@ -39,6 +36,7 @@ header.h1 {
     margin-right: auto;
     margin-left: auto;
     transition: transform 0.5s ease-in-out;
+    
 }
 
 .menu li {
@@ -52,6 +50,12 @@ header.h1 {
     color: rgb(64, 166, 132);
     flex-direction: row;
     transition: all 0.5s;
+    align-self: center;
+}
+
+.menu li h1 a{
+    text-decoration: none;
+    justify-content: center;
 }
 
 .menu li a:hover {
@@ -68,7 +72,7 @@ header.h1 {
     text-align: center;
 }
 
-.dropdown {
+.dropdownmenu1 {
     padding: 0;
     position: absolute;
     top: 48px;
@@ -83,15 +87,16 @@ header.h1 {
 }
 
   /* Show the dropdown menu on hover */
-  .menu:hover .dropdown {
+  .menu li:hover .dropdownmenu1 {
     display:flex;
+    transform: translateY(8px);
     flex-direction: row;
     min-width: 5rem;
     opacity: 1;
-    max-height: 100%;
     visibility: visible;
     width: 100%;
     background-color: rgb(40, 1, 113);
+    max-height: 100%;
   }
 
 .container {
@@ -169,6 +174,21 @@ header.h1 {
 .thumb:hover .mask a {
     opacity: 1;
     transform: scale(1);
+}
+
+body {
+    margin-top: 4rem;
+    background-color: #e3d9ff;
+}
+
+h3 {
+    padding-top: 2rem;
+    width:70%;
+    align-items: center;
+    align-self: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 @media screen and (max-width: 768px) {
