@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>More Arrays</title>
+        <script type="text/javascript">
+            var arrImg = [
+                'http://upload.wikimedia.org/wikipedia/commons/2/2d/African_Pygmy_Goat_005.jpg',
+                'http://1.bp.blogspot.com/-gTv1VW-TErY/Ueliw8LyMcI/AAAAAAAADuQ/3gF2Qw8Cr98/s1600/Mountain_Goat_Animal.jpg',
+                'https://morningchores.com/wp-content/uploads/2019/12/The-Kiko-Goat-Breed-Info-Characteristics-Breeding-and-Care-FI.jpg'
+            ]
+
+            // random links to correspond to each image
+            var arrLinks = [
+                'https://commons.wikimedia.org/wiki/File:African_Pygmy_Goat_005.jpg',
+                'https://wildlifeanimalz.blogspot.com/2013/07/Mountain-Goat-Facts.html',
+                'https://morningchores.com/kiko-goat/'
+            ]
+
+            // helper function for picking random number in our array
+            function randomIndex(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            // write our own random image function outside of our event listeners
+            // we should only call it after the DOM has fully loaded
+            function loadRandomImage(){
+                var index = randomIndex('arrImg.length');
+                var img = document.getElementById("animal");
+                var link = document.getElementById("dynLink");
+                // assign the src of the image to a string in a random index slot in our image array
+                img.src = arrImg[index];
+                // Assign the href from our links array
+                link.href = arrLinks[index];
+            }
+
+            //wait for the page to finish rendering all of its dom elements before we call our random image function
+            document.addEventListener('DOMContentLoaded', function() {
+                loadRandomImage()
+                // and we can do lots more here
+            })
+
+            // for this example we can just call the function as the second argument
+            // document.addEventListener('DOMContentLoaded', loadRandomImage)
+
+        </script>
+    </head>
+    <body>
+        <a href="#" id="dynLink"><img src="" id="animal"/></a>
+    </body>
+</html>
