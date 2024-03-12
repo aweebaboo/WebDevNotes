@@ -18,6 +18,7 @@ header {
     z-index: 1000;
     top: 0;
     text-align: center;
+    transition: all 0.5s;
 }   
 
 
@@ -35,7 +36,7 @@ header.h1 {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    transition: transform 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     
 }
 
@@ -63,6 +64,22 @@ header.h1 {
     background-color: rgba(0,0,0,0.3);
 }
 
+.menu li p {
+    display: flex;
+    padding: 1rem;
+    color: rgb(64, 166, 132);
+    flex-direction: row;
+    transition: all 0.5s;
+    align-self: center;
+    text-decoration: underline;
+}
+
+.menu li p:hover {
+    color: #EEE;
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
 .menu ul li {   
     list-style-type: none;
     padding: 0;
@@ -73,29 +90,33 @@ header.h1 {
 }
 
 .dropdownmenu1 {
+    display: flex;
     padding: 0;
     position: absolute;
-    top: 48px;
+    transition: all 0.75s ease-out, top 0s 0.75s;
+    top: -50px;
     left:0;
-    width: 5rem;
+    min-width: 5rem;
+    width: 100%;
     box-shadow: none;
-    display: none;
+    max-height: 0;  
+    z-index: -10;
     opacity: 0;
-    visibility: hidden;
-    max-height: 0;
-    transition: all 0.5s;
 }
 
-  /* Show the dropdown menu on hover */
-  .menu li:hover .dropdownmenu1 {
+  .menu li p.hovermenu:hover ~ .dropdownmenu1,
+  .dropdownmenu1:hover
+  {
     display:flex;
-    transform: translateY(8px);
+    flex-direction: row;
+    top:56px;
     min-width: 5rem;
-    opacity: 1;
-    visibility: visible;
+    max-height: 100%;
     width: 100%;
     background-color: rgb(40, 1, 113);
-    max-height: 100%;
+    opacity: 1;
+    overflow: visible;
+    transition: all 0.75s ease-out, top 0s;
   }
 
 .container {
@@ -108,24 +129,22 @@ header.h1 {
 
 .thumb {
     position: relative;
-    /* whichever way you style width make it consistent */
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 35%;
-    /* flex: 0 0 30%;
-    width: 30%; */
     display: flex;
     overflow: hidden;
     margin: 24px auto;
     justify-content: space-around;
 }
 
-/* prepare initial state for image trnasform */
 .thumb img {
     display: flex;
     transform: scale(1.1);
     transform: rotate(0deg);
     transition: all 1s ease;
+    width: 500px;
+    height: 500px;
     
 }
 
@@ -152,9 +171,6 @@ header.h1 {
     margin:0;
 }
 
-.mask p {
-    font-style: italic;
-}
 
 .thumb:hover .mask {
     opacity: 1;
