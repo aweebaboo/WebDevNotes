@@ -1,33 +1,60 @@
 
-Code I Figured Out: 
-.dropdownmenu1 {
-    display: flex;
-    padding: 0;
-    position: absolute;
-    transition: all 0.75s ease-out, top 0s 0.75s;
-    top: -50px;
-    left:0;
-    min-width: 5rem;
-    width: 100%;
-    box-shadow: none;
-    max-height: 0;  
-    z-index: -10;
-    opacity: 0;
+## Code I Figured Out: 
+
+.dropdownmenu1 { 
+
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;
+
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;
+
+&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
+
+&nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.75s ease-out, top 0s 0.75s;
+
+&nbsp;&nbsp;&nbsp;&nbsp;top: -50px;
+
+&nbsp;&nbsp;&nbsp;&nbsp;left:0;
+
+&nbsp;&nbsp;&nbsp;&nbsp;min-width: 5rem;
+
+&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+
+&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: none;
+
+&nbsp;&nbsp;&nbsp;&nbsp;max-height: 0;  
+
+&nbsp;&nbsp;&nbsp;&nbsp;z-index: -10;
+
+&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0;
+
 }
 
-  .menu li p.hovermenu:hover ~ .dropdownmenu1,
-  .dropdownmenu1:hover
-  {
-    display:flex;
-    flex-direction: row;
-    top:56px;
-    min-width: 5rem;
-    max-height: 100%;
-    width: 100%;
-    background-color: rgb(40, 1, 113);
-    opacity: 1;
-    overflow: visible;
-    transition: all 0.75s ease-out, top 0s;
+.menu li p.hovermenu:hover ~ .dropdownmenu1,
+
+.dropdownmenu1:hover
+
+{
+
+&nbsp;&nbsp;&nbsp;&nbsp;display:flex;
+
+&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row;
+
+&nbsp;&nbsp;&nbsp;&nbsp;top:56px;
+
+&nbsp;&nbsp;&nbsp;&nbsp;min-width: 5rem;
+
+&nbsp;&nbsp;&nbsp;&nbsp;max-height: 100%;
+
+&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(40, 1, 113);
+
+&nbsp;&nbsp;&nbsp;&nbsp;opacity: 1;
+
+&nbsp;&nbsp;&nbsp;&nbsp;overflow: visible;
+
+&nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.75s ease-out, top 0s;
+
   }
 
 All the links i used to find ways to make this work are above, I learned about ~ and about applying separate animations to an object on hover and on taking the mouse off it
