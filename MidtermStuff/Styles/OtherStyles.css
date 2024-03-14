@@ -93,7 +93,7 @@ header.h1 {
     display: flex;
     padding: 0;
     position: absolute;
-    transition: all 0.75s ease-out, top 0s 0.75s;
+    transition: all 0.2s, top 0s 0.2s;
     top: -50px;
     left:0;
     min-width: 5rem;
@@ -116,7 +116,37 @@ header.h1 {
     background-color: rgb(40, 1, 113);
     opacity: 1;
     overflow: visible;
-    transition: all 0.75s ease-out, top 0s;
+    transition: all 0.2s, top 0s;
+  }
+
+  .dropdownmenu2 {
+    display: flex;
+    padding: 0;
+    position: absolute;
+    transition: all 0.2s, top 0s 0.2s;
+    top: -50px;
+    left:0;
+    min-width: 5rem;
+    width: 100%;
+    box-shadow: none;
+    max-height: 0;  
+    z-index: -10;
+    opacity: 0;
+}
+
+  .menu li p.hovermenu2:hover ~ .dropdownmenu2,
+  .dropdownmenu2:hover
+  {
+    display:flex;
+    flex-direction: row;
+    top:56px;
+    min-width: 5rem;
+    max-height: 100%;
+    width: 100%;
+    background-color: rgb(40, 1, 113);
+    opacity: 1;
+    overflow: visible;
+    transition: all 0.2s, top 0s;
   }
 
 img {
