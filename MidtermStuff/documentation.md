@@ -71,3 +71,11 @@ I didn’t know to use the ~ to target other parts but checking this helped me f
  - https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay 
 
  - https://stackoverflow.com/questions/5921073/different-css-transition-delays-for-hover-and-mouseout apply separate transition and transition delays to hovering and mousing off
+
+More time work:
+
+- Maybe embedding piano youtube videos on the corresponding page
+
+- Aesthetic improvements
+
+- Try to add content to pages: couldn't think of what to add
