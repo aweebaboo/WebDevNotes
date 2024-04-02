@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Positioning Basics</title>
+        <script>
+            let counter = 0
+
+            function intervalTest() {
+                let p = document.getElementById('timeElapsed')
+                p.innerHTML = counter
+                counter +=5;
+            }
+
+            // call a function directly on the browser window, use setInterval to determine how often you want it to fire
+            // use setInterval to say how often
+            window.setInterval(intervalTest, 500)
+
+            if (counter === 50) {
+                clearInterval(intervalTest)
+            }
+        </script>
+    </head>
+    <body>
+        <p id="timeElapsed">
+            this will go away once the function overrides innerhtml
+        </p>
+    </body>
+</html>

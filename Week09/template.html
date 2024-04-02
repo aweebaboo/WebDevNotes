@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JSON</title>
+    </head>
+    <script>
+        let customer = {
+            firstName: 'Tony',
+            lastName: 'Pizza',
+            pets: ['dog', 'cat', 'iguana']
+        }
+
+        // how to log the first name
+        console.log(customer.firstName)
+        // log last name
+        console.log(customer.lastName)
+        // log the second pet
+        console.log(customer.pets[1])
+        // log all pets
+        for (var i = 0; i<customer.pets.length; i++) {
+            console.log(customer.pets[i])
+        }
+
+        console.log(customer)
+
+        // we can add new properties to an existing object using dot notation
+        customer.age = 23;
+        console.log(customer)
+    </script>
+    <body>
+        
+    </body>
+</html>
