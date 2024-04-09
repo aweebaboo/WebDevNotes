@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Objects and JSON</title>
+    <script type="text/javascript">
+      // initialize a new object and store it as a variable named customer
+      const customer = {
+        name: 'Tony Pizza',
+        age: 23,
+        married: false,
+        pets: ['dog', 'cat', 'iguana'],
+        siblings: [
+          {name: 'Mary', age: 32, married: true},
+          {name: 'Billy', age: 16, married: false},
+        ],
+      }
+
+      const customerJSON = JSON.stringify(customer)
+      console.log(customerJSON)
+
+      // console.log(customer.name)
+      // // reassign customer name
+      // customer.name = 'John Pizza'
+      // console.log(customer.name)
+      // console.log(customer)
+
+      // customer.eyeColor = "Green"
+
+      // customer.pets.push('chicken')
+
+      // customer.siblings[0].pets = ["spider", "snail"]
+      // console.log(customer.siblings[0].pets)
+
+      async function logApiResults(){
+        var number = Math.ceil(Math.random() * 100)
+
+        // await = JS, wait for this promise to be resolved
+        // don't execute past this lin of code until response has a proper value
+        const response = await fetch(`https://rickandmortyapi.com/api/character/${number}`)
+        // console.log('RESPONSE', response)
+
+        // this is how MDN does it, but .json returns a JS object from the JSON you called it on
+        const myApiData = await response.json()
+        // console.log("RESULT", result)
+        // console.log(result);
+        
+        console.log(myApiData)
+        const message = `${myApiData.name} is a ${myApiData.gender} ${myApiData.species} from ${myApiData.origin.name} and they are ${myApiData.status}`
+        console.log(message)
+
+        const quote = await fetch('https://api.quotable.io/quotes/random')
+        const myquote = await quote.json()
+        console.log(myquote)
+        console.log(`${myquote.author} said "${myquote.content}"`)
+
+        const user = await fetch('https://randomuser.me/api/')
+        const randUser = await user.json()
+        console.log(randUser)
+        console.log(`${randUser.results.name} ${randUser.results.name}'s username is ${randUser.results.login} and their mailing address is ${randUser.results}`)
+      }
+
+
+      // const message = [Character Name] is a [species] from [origin] and he is [status]
+      logApiResults()
+
+    </script>
+  </head>
+  <body></body>
+</html>

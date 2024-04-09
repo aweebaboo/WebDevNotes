@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator Test</title>
+    <script type="text/javascript">
+
+           
+        
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            const calculate = document.getElementById('calculate')
+
+            calculate.addEventListener("click", () => {
+                var value1 = parseInt(document.getElementById('firstnum').value);
+                var value2 = parseInt(document.getElementById('secondnum').value);
+                var result;
+                operation = document.querySelector('input[name="operation"]:checked').value;
+
+                if(operation === "add") {
+                    result = value1+value2;
+                } if(operation === "subtract") {
+                    result = value1-value2;
+                } if(operation === "multiply") {
+                    result = value1*value2;
+                } if (operation === "divide") {
+                    result = value1/value2;
+                } else
+
+                console.log('User input: ' + value1 + ', ' + value2);
+                console.log('result = ' + result)
+                
+                document.querySelector('.answer').innerHTML = result
+                
+        })
+        });
+        
+        
+    </script>
+  </head>
+  <body>
+    
+        <label for="firstnum">First Number:</label>
+        <input type="number" id="firstnum" name="firstnum" placeholder="Insert Number"></input><br><br>
+
+        <label for="secondnum">Second Number:</label>
+        <input type="number" id="secondnum" name="secondnum" placeholder="Insert Number"><br><br>
+
+        <input type="radio" name="operation" value="add"/>Addition
+        <input type="radio" name="operation" value="subtract"/>Subtraction
+        <input type="radio" name="operation" value="multiply"/>Multiplication
+        <input type="radio" name="operation" value="divide"/>Division<br><br>
+
+        <button id="calculate">Calculate</button>
+    
+    <div id="result">
+        <h3 class="answer">answer here</h3>
+    </div>
+  </body>
+</html>
