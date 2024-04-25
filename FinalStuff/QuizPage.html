@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Final Website</title>
         
-        <link rel="stylesheet" type="text/css" href="./Styles/CharacterStyle.css" />
+        <link rel="stylesheet" type="text/css" href="./Styles/QuizStyle.css" />
     </head>
     <body>
         <div class="header"><p>_</p></div>
@@ -18,8 +18,152 @@
             </div>
         </div>
 
+        <main class="CharacterHint">
+            <div class="charactertext" id="CharHint">
+                <h3>This is a hint with information about the character. This is placeholder text to see what the box looks like when there is lots of text.</h3>
+            </div>
+        </main>
+
+        <main class="ResponseList">
+            <div class="Response" id="ans1">
+                <div class="char">
+                    <img src="https://placekitten.com/200/300" />
+                    <h3>CharName</h3>
+                </div>
+            </div>
+            <div class="Response" id="ans2">
+                <div class="char">
+                    <img src="https://placekitten.com/200/300" />
+                    <h3>CharName</h3>
+                </div>
+            </div><div class="Response" id="ans3">
+                <div class="char">
+                    <img src="https://placekitten.com/200/300" />
+                    <h3>CharName</h3>
+                </div>
+            </div><div class="Response" id="ans4">
+                <div class="char">
+                    <img src="https://placekitten.com/200/300" />
+                    <h3>CharName</h3>
+                </div>
+            </div>
     </body>
-    <script type="text/javascript">           
+    <script type="text/javascript">      
+        document.addEventListener('DOMContentLoaded', () => {
+
+            var hint1 = '<h3>this is hint 1</h3>';
+            var hint2 = '<h3>this is hint 2</h3>';
+            var hint3 = '<h3>this is hint 3</h3>';
+            var hint4 = '<h3>this is hint 4</h3>';
+            var hint5 = '<h3>this is hint 5</h3>';
+            var hint6 = '<h3>this is hint 6</h3>';
+            var hint7 = '<h3>this is hint 7</h3>';
+            var hint8 = '<h3>this is hint 8</h3>';
+            var hint9 = '<h3>this is hint 9</h3>';
+            var hint10 = '<h3>this is hint 10</h3>';
+            var hint11 = '<h3>this is hint 11</h3>';
+            var hint12 = '<h3>this is hint 12</h3>';
+
+            var hintlist = [hint1, hint2, hint3, hint4, hint5, hint6, hint7, hint8, hint9, hint10, hint11, hint12]
+
+            var response1 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char1</h3></div>"
+            var response2 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char2</h3></div>"
+            var response3 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char3</h3></div>"
+            var response4 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char4</h3></div>"
+            var response5 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char5</h3></div>"
+            var response6 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char6</h3></div>"
+            var response7 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char7</h3></div>"
+            var response8 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char8</h3></div>"
+            var response9 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char9</h3></div>"
+            var response10 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char10</h3></div>"
+            var response11 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char11</h3></div>"
+            var response12 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char12</h3></div>"
+
+
+            var responselist =[response1, response2, response3, response4, response5, response6, response7, response8, response9, response10, response11, response12]
+            console.log(hintlist)
+
+            var ans1 = document.getElementById('ans1')
+            var ans2 = document.getElementById('ans2')
+            var ans3 = document.getElementById('ans3')
+            var ans4 = document.getElementById('ans4')
+            
+            var hint = document.getElementById('CharHint')
+            console.log(hint)
+
+            var shownhint
+            var response
+            var answer
+            var anschoice = []
+
+            function shuffle(array) {
+                var i = array.length,
+                    j = 0,
+                    temp;
+
+                while (i--) {
+
+                    j = Math.floor(Math.random() * (i+1));
+
+                    // swap randomly chosen element with current element
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+
+                }
+
+                return array;
+            }
+
+            function reshuffle() {
+
+                // randomly pick a hint to be chosen
+                
+                var numberchoices = [0,1,2,3,4,5,6,7,8,9,10,11]
+                shuffle(numberchoices)
+                console.log(numberchoices)
+
+                hint.innerHTML = hintlist[numberchoices[0]]
+                anschoice[0] = responselist[numberchoices[0]]
+
+                anschoice[1] = responselist[numberchoices[1]]
+
+                anschoice[2] = responselist[numberchoices[2]]
+
+                anschoice[3] = responselist[numberchoices[3]]
+
+                for (var i = anschoice.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = anschoice[i];
+                    anschoice[i] = anschoice[j];
+                    anschoice[j] = temp;
+                }
+
+                ans1.innerHTML = anschoice[0]
+                ans2.innerHTML = anschoice[1]
+                ans3.innerHTML = anschoice[2]
+                ans4.innerHTML = anschoice[3]
+                anschoice = []
+            }
+
+            ans1.addEventListener('click', function() {
+                reshuffle()
+            })
+
+            ans2.addEventListener('click', function() {
+                reshuffle()
+            })
+
+            ans3.addEventListener('click', function() {
+                reshuffle()
+            })
+
+            ans4.addEventListener('click', function() {
+                reshuffle()
+            })
+        })
+
+    
         
     </script>
 </html>

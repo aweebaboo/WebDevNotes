@@ -58,6 +58,9 @@
     height: 50px;
 }
 
+#active {
+    background-color: lightblue;
+}
 
 .characterlist {
     position: relative;
@@ -71,7 +74,6 @@
     border-radius: 20px;
     height: auto;
     padding: 10px;
-    cursor: pointer;
 }
 
 .infopopup{

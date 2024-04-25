@@ -24,14 +24,15 @@
     display: none;
 }
 
-.container {
-    width:100%;
+.CharacterHint {
+    width:250px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: auto;
     overflow: hidden;
+    margin: auto;
 }
 
 .webtab {
@@ -42,6 +43,7 @@
     justify-content: space-between;
     padding: auto;
     margin-top: 50px;
+    text-align: center;
 }
 
 .link {
@@ -58,8 +60,35 @@
     height: 50px;
 }
 
+#active {
+    background-color: lightblue;
+}
 
-.characterlist {
+.charactertext {
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: auto;
+    padding: 10px;
+    /* flex-basis: 100%; */
+}
+
+.ResponseList {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: auto;
+    overflow: hidden;
+}
+
+.Response {
     position: relative;
     flex-grow: 0;
     flex-shrink: 0;
@@ -72,30 +101,4 @@
     height: auto;
     padding: 10px;
     cursor: pointer;
-}
-
-.infopopup{
-    position: fixed;
-    width: 100vw;
-    height: 100vw;
-    z-index: 1001;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    align-items: center;
-    text-align: center;
-}
-
-.textcard{
-    width:70vh;
-    height: 70vh;
-    top: 0.5vw;
-    display: inline-block;
-    z-index: 1002;
-    background-color: white;
-    opacity: 100%;
-    align-items: center;
-    vertical-align: middle;
-    margin-top: 90px;
-    border: black solid 1px;
-    border-radius: 10px;
 }
