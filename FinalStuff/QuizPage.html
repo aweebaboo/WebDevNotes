@@ -18,11 +18,18 @@
             </div>
         </div>
 
+
         <main class="CharacterHint">
             <div class="charactertext" id="CharHint">
                 <h3>This is a hint with information about the character. This is placeholder text to see what the box looks like when there is lots of text.</h3>
             </div>
         </main>
+        
+        <div class="scoreboard">
+            <div id="score">
+                <h2>Score Here</h2>
+            </div>
+        </div>
 
         <main class="ResponseList">
             <div class="Response" id="ans1">
@@ -47,6 +54,8 @@
                     <h3>CharName</h3>
                 </div>
             </div>
+        </main>
+
     </body>
     <script type="text/javascript">      
         document.addEventListener('DOMContentLoaded', () => {
@@ -66,18 +75,18 @@
 
             var hintlist = [hint1, hint2, hint3, hint4, hint5, hint6, hint7, hint8, hint9, hint10, hint11, hint12]
 
-            var response1 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char1</h3></div>"
-            var response2 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char2</h3></div>"
-            var response3 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char3</h3></div>"
-            var response4 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char4</h3></div>"
-            var response5 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char5</h3></div>"
-            var response6 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char6</h3></div>"
-            var response7 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char7</h3></div>"
-            var response8 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char8</h3></div>"
-            var response9 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char9</h3></div>"
-            var response10 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char10</h3></div>"
-            var response11 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char11</h3></div>"
-            var response12 = "<div class='char'><img src='https://placekitten.com/200/300' /><h3>Char12</h3></div>"
+            var response1 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char1</h3></div>'
+            var response2 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char2</h3></div>'
+            var response3 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char3</h3></div>'
+            var response4 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char4</h3></div>'
+            var response5 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char5</h3></div>'
+            var response6 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char6</h3></div>'
+            var response7 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char7</h3></div>'
+            var response8 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char8</h3></div>'
+            var response9 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char9</h3></div>'
+            var response10 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char10</h3></div>'
+            var response11 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char11</h3></div>'
+            var response12 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char12</h3></div>'
 
 
             var responselist =[response1, response2, response3, response4, response5, response6, response7, response8, response9, response10, response11, response12]
@@ -88,13 +97,18 @@
             var ans3 = document.getElementById('ans3')
             var ans4 = document.getElementById('ans4')
             
+            var score = document.getElementById('score')
+            var numscore = 0;
+
             var hint = document.getElementById('CharHint')
-            console.log(hint)
 
             var shownhint
             var response
+
             var answer
             var anschoice = []
+            var rightanswer
+            var anscorrect
 
             function shuffle(array) {
                 var i = array.length,
@@ -118,13 +132,14 @@
             function reshuffle() {
 
                 // randomly pick a hint to be chosen
-                
+
                 var numberchoices = [0,1,2,3,4,5,6,7,8,9,10,11]
                 shuffle(numberchoices)
-                console.log(numberchoices)
 
                 hint.innerHTML = hintlist[numberchoices[0]]
                 anschoice[0] = responselist[numberchoices[0]]
+
+                anscorrect = responselist[numberchoices[0]]
 
                 anschoice[1] = responselist[numberchoices[1]]
 
@@ -142,23 +157,47 @@
                 ans1.innerHTML = anschoice[0]
                 ans2.innerHTML = anschoice[1]
                 ans3.innerHTML = anschoice[2]
-                ans4.innerHTML = anschoice[3]
+                ans4.innerHTML = anschoice[3];
+                // this[`ans${rightanswer}`].setAttribute('id', `ans${rightanswer} correct`)
+
                 anschoice = []
+
+                // correctans = document.getElementById('correct')
             }
 
             ans1.addEventListener('click', function() {
+                if (document.getElementById('ans1').innerHTML === anscorrect) {
+                    console.log('correct!')
+                    numscore+=1
+                    score.innerHTML = `<h2>Your Score Is: ${numscore}<h2>`
+                }
                 reshuffle()
             })
 
             ans2.addEventListener('click', function() {
+                if (document.getElementById('ans2').innerHTML === anscorrect) {
+                    console.log('correct!')
+                    numscore+=1
+                    score.innerHTML = `<h2>Your Score Is: ${numscore}<h2>`
+                }
                 reshuffle()
             })
 
             ans3.addEventListener('click', function() {
+                if (document.getElementById('ans3').innerHTML === anscorrect) {
+                    console.log('correct!')
+                    numscore+=1
+                    score.innerHTML = `<h2>Your Score Is: ${numscore}<h2>`
+                }
                 reshuffle()
             })
 
             ans4.addEventListener('click', function() {
+                if (document.getElementById('ans4').innerHTML === anscorrect) {
+                    console.log('correct!')
+                    numscore+=1
+                    score.innerHTML = `<h2>Your Score Is: ${numscore}<h2>`
+                }
                 reshuffle()
             })
         })

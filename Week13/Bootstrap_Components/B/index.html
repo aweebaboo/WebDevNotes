@@ -12,6 +12,52 @@
     />
   </head>
   <body>
+    <h1>More Components and Utilities</h1>
+    <!-- Misc Utility Classes -->
+    <div class="container">
+      <div class="container p-3 bg-warning-subtle text-success rounded-5 border border-5 border-danger">
+        <div class="">Example element with utility classes!</div>
+      </div>
+
+      <!-- chained multiple modals, scrollable content, static BG -->
+      <div class="container mt-5">
+        <!-- button to open modal, pay attention to data-bs-() stuff -->
+        <button 
+        type="button" 
+        class="btn btn-lg btn-outline-dark border-2" 
+        data-bs-toggle="modal" 
+        data-bs-target="#wizard">Open Modal 1
+        </button>
+
+        <!-- modal 1 -->
+        <div class="modal fade" 
+        id="wizard" 
+        data-bs-backdrop="static" 
+        data-bs-keyboard="false" 
+        tab-index="-1"
+        aria-labeledby="wizardLabel"
+        aria-hidden="true"
+        >
+
+          <!-- modal dialog box scrollable -->
+          <div class="modal-dialogue modal-dialogue-scrollable modal-dialogue-centered">
+            <div class="modal-content border-danger rounded-0">
+              <h1 class="modal-title fs-5" id="wizardLabel">Step 1 Tutorial</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+          
+          <div class="modal-body">
+            <p>this is the first step in our tutorial.  Click next to open step 2!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Exit Modal</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#wizard2">Next Step</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
