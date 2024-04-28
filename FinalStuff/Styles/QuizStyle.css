@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
+    background-color: aliceblue;
 }
 
 .header {
@@ -26,7 +27,7 @@
 }
 
 .CharacterHint {
-    width:250px;
+    width:300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,4 +115,8 @@
     height: auto;
     padding: 10px;
     cursor: pointer;
+}
+
+.Response img {
+    width:300px;
 }

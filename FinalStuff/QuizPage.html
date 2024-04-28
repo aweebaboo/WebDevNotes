@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="./Styles/QuizStyle.css" />
     </head>
     <body>
-        <div class="header"><p>_</p></div>
+        <div class="header"><p></p></div>
 
         <div class="pagebuttons">
             <div class="webtab">
@@ -21,10 +21,10 @@
 
         <main class="CharacterHint">
             <div class="charactertext" id="CharHint">
-                <h3>This is a hint with information about the character. This is placeholder text to see what the box looks like when there is lots of text.</h3>
+                <h3>This is where a hint with information about the character will show up.</h3>
             </div>
         </main>
-        
+
         <div class="scoreboard">
             <div id="score">
                 <h2>Score Here</h2>
@@ -35,23 +35,23 @@
             <div class="Response" id="ans1">
                 <div class="char">
                     <img src="https://placekitten.com/200/300" />
-                    <h3>CharName</h3>
+                    <h3>Click</h3>
                 </div>
             </div>
             <div class="Response" id="ans2">
                 <div class="char">
                     <img src="https://placekitten.com/200/300" />
-                    <h3>CharName</h3>
+                    <h3>Any Box</h3>
                 </div>
             </div><div class="Response" id="ans3">
                 <div class="char">
                     <img src="https://placekitten.com/200/300" />
-                    <h3>CharName</h3>
+                    <h3>To</h3>
                 </div>
             </div><div class="Response" id="ans4">
                 <div class="char">
                     <img src="https://placekitten.com/200/300" />
-                    <h3>CharName</h3>
+                    <h3>Begin!</h3>
                 </div>
             </div>
         </main>
@@ -60,33 +60,33 @@
     <script type="text/javascript">      
         document.addEventListener('DOMContentLoaded', () => {
 
-            var hint1 = '<h3>this is hint 1</h3>';
-            var hint2 = '<h3>this is hint 2</h3>';
-            var hint3 = '<h3>this is hint 3</h3>';
-            var hint4 = '<h3>this is hint 4</h3>';
-            var hint5 = '<h3>this is hint 5</h3>';
-            var hint6 = '<h3>this is hint 6</h3>';
-            var hint7 = '<h3>this is hint 7</h3>';
-            var hint8 = '<h3>this is hint 8</h3>';
-            var hint9 = '<h3>this is hint 9</h3>';
-            var hint10 = '<h3>this is hint 10</h3>';
-            var hint11 = '<h3>this is hint 11</h3>';
-            var hint12 = '<h3>this is hint 12</h3>';
+            var hint1 = '<h3>The Former Hunter Vanguard</h3>';
+            var hint2 = '<h3>The Warlock Vanguard</h3>';
+            var hint3 = '<h3>The Titan Vanguard</h3>';
+            var hint4 = '<h3>Brother of Mara Sov</h3>';
+            var hint5 = '<h3>Legendary Warlock, researched the infinite forest</h3>';
+            var hint6 = '<h3>Legendary titan, died but was saved by the Guardian and Osiris through time-traveling</h3>';
+            var hint7 = '<h3>The Tower Gunsmith</h3>';
+            var hint8 = '<h3>Queen of the Reef, ruler of the Awoken</h3>';
+            var hint9 = '<h3>The Witch Queen</h3>';
+            var hint10 = '<h3>The Kell of Light</h3>';
+            var hint11 = '<h3>Empress of the Cabal</h3>';
+            var hint12 = '<h3>Commander of the Black Fleet</h3>';
 
             var hintlist = [hint1, hint2, hint3, hint4, hint5, hint6, hint7, hint8, hint9, hint10, hint11, hint12]
 
-            var response1 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char1</h3></div>'
-            var response2 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char2</h3></div>'
-            var response3 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char3</h3></div>'
-            var response4 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char4</h3></div>'
-            var response5 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char5</h3></div>'
-            var response6 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char6</h3></div>'
-            var response7 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char7</h3></div>'
-            var response8 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char8</h3></div>'
-            var response9 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char9</h3></div>'
-            var response10 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char10</h3></div>'
-            var response11 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char11</h3></div>'
-            var response12 = '<div class="char"><img src="https://placekitten.com/200/300"><h3>Char12</h3></div>'
+            var response1 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/b/bd/Cayde6gifbox.gif/488px-Cayde6gifbox.gif"><h3>Cayde-6</h3></div>'
+            var response2 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/f/fb/Ikora-Destiny_2.jpg/450px-Ikora-Destiny_2.jpg"><h3>Ikora</h3></div>'
+            var response3 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/5/56/ZavalaGhost.png/488px-ZavalaGhost.png"><h3>Zavala</h3></div>'
+            var response4 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/1/17/CrowUnmaskedInfo.jpg/450px-CrowUnmaskedInfo.jpg"><h3>Crow</h3></div>'
+            var response5 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/6/65/OsirisInfobox.jpg/450px-OsirisInfobox.jpg"><h3>Osiris</h3></div>'
+            var response6 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/1/1a/Saint14Infobox.jpg/450px-Saint14Infobox.jpg"><h3>Saint-14</h3></div>'
+            var response7 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/1/1b/Banshee44Infobox.jpg/450px-Banshee44Infobox.jpg"><h3>Banshee-44</h3></div>'
+            var response8 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/d/d1/LordShaxxBabyMama.jpg/450px-LordShaxxBabyMama.jpg"><h3>Mara Sov</h3></div>'
+            var response9 = '<div class="char"><img src="https://destiny.wiki.gallery/images/8/86/Savathun-Mother_Morph.png"><h3>Savathun</h3></div>'
+            var response10 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/f/fa/Mithrax0.jpg/450px-Mithrax0.jpg"><h3>Mithrax</h3></div>'
+            var response11 = '<div class="char"><img src="https://destiny.wiki.gallery/images/7/75/CaiatlInfobox.jpg"><h3>Caiatl</h3></div>'
+            var response12 = '<div class="char"><img src="https://destiny.wiki.gallery/images/thumb/5/5a/Thewitnessthumb.png/450px-Thewitnessthumb.png"><h3>The Witness</h3></div>'
 
 
             var responselist =[response1, response2, response3, response4, response5, response6, response7, response8, response9, response10, response11, response12]
