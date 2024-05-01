@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     height: 50px;
-    background-color: rgb(40, 1, 113);
+    background-color: rgb(58, 58, 58);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -130,3 +130,15 @@
     background-color: white;
     text-align: left;
 }
+
+.characterlist:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+} 
