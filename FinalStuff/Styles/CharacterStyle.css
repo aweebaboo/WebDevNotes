@@ -103,7 +103,7 @@
 .infopopup{
     position: fixed;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     z-index: 1001;
     background-color: rgba(0,0,0,0.5);
     display: none;
@@ -112,7 +112,7 @@
 }
 
 .textcard{
-    width:70vh;
+    width:70vw;
     height: 70vh;
     top: 0.5vw;
     display: inline-block;
