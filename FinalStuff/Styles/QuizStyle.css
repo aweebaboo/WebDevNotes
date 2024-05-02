@@ -49,6 +49,17 @@
     padding:10px
 }
 
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: auto;
+    padding:10px
+}
+
 .webtab {
     width:100%;
     display: flex;
