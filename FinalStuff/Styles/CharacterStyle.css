@@ -39,6 +39,7 @@
 .container .characterlist .char img {
     width: 200px;
     height: auto;
+    border-radius: 10px;
 }
 
 .container .characterlist .char {
